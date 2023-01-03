@@ -9,15 +9,19 @@ public class Course {
         this.quantity = quantity;
     }
 
-    public Program getCertification() {
-        return certification;
+    public double amount() {
+        return this.certification.fee(quantity);
     }
 
-    public int getQuantity() {
+    public double proDiscount() {
+        return this.certification.discount(quantity);
+    }
+
+    public int getNumberOfCourse() {
         return quantity;
     }
 
-    public double amount() {
-        return this.certification.fee(quantity);
+    public double getProgramCertificationAmount() {
+        return certification.fee(1);
     }
 }

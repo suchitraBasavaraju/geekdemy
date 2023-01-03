@@ -1,20 +1,23 @@
 package com.example.geektrust;
 
+import java.io.FileNotFoundException;
+import java.util.List;
+
 public class Main {
-    public static void main(String[] args)  {
-        /*
-        Sample code to read from file passed as command line argument
+
+
+    public static void main(String[] args) {
         try {
-            // the file to be opened for reading
-            FileInputStream fis = new FileInputStream(args[0]);
-            Scanner sc = new Scanner(fis); // file to be scanned
-            // returns true if there is another line to read
-            while (sc.hasNextLine()) {
-               //Add your code here to process input commands
-            }
-            sc.close(); // closes the scanner
-        } catch (IOException e) {
+            String fileName = args[0];
+            FileParser fileParser = new FileParser(fileName);
+            List<String> parsedLines = fileParser.parse();
+
+            String bill = fileParser.parseLines(parsedLines);
+            System.out.println(bill);
+        } catch (FileNotFoundException e) {
+            System.out.println("file not found");
         }
-        */
-	}
+    }
+
 }
+
